@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useHistory, Redirect } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import Header from "../components/Header";
 import "../styles/SuccessPage.css";
 import { useLazyQuery } from "@apollo/client";
@@ -12,9 +12,7 @@ const SuccessPage = () => {
   const [sessionID, setSessionID] = useState("");
   const user = useSelector(selectUser);
   const history = useHistory();
-  const [orderDetails, { loading, error, data }] = useLazyQuery(
-    queries.ORDER_DETAILS
-  );
+  const [orderDetails, { loading, data }] = useLazyQuery(queries.ORDER_DETAILS);
 
   useEffect(() => {
     setSessionID(location.search.split("=")[1]);

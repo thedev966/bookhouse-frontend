@@ -15,17 +15,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUser, selectUser } from "./features/authSlice";
 import { useLazyQuery } from "@apollo/client";
 import queries from "./graphql/Queries";
-import {
-  EMPTY_BASKET,
-  LOAD_BASKET,
-  selectBasket,
-} from "./features/basketSlice";
+import { EMPTY_BASKET, LOAD_BASKET } from "./features/basketSlice";
 
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  const [refreshToken, { loading, data }] = useLazyQuery(queries.REFRESH_TOKEN);
+  const [refreshToken, { data }] = useLazyQuery(queries.REFRESH_TOKEN);
 
   useEffect(() => {
     if (user) {

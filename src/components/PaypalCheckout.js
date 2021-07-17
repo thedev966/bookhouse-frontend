@@ -6,11 +6,8 @@ import { selectUser } from "../features/authSlice";
 
 export default function PaypalCheckout({ products }) {
   const paypal = useRef();
-  const [items, setItems] = useState([]);
   const user = useSelector(selectUser);
-  const [paypalCheckout, { loading, data }] = useMutation(
-    mutations.PAYPAL_CHECKOUT
-  );
+  const [paypalCheckout, { data }] = useMutation(mutations.PAYPAL_CHECKOUT);
 
   console.log(products);
 

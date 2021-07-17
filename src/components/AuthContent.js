@@ -18,7 +18,7 @@ const alertStyle = {
   textAlign: "center",
 };
 
-const AuthContent = ({ title, operation, setIsOpenedAuthModal }) => {
+const AuthContent = ({ title, operation }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();

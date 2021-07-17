@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import RemoveIcon from "@material-ui/icons/Remove";
@@ -16,7 +16,6 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import mutations from "../graphql/Mutations";
 import { LOAD_BASKET } from "../features/basketSlice";
-import PaypalCheckout from "../components/PaypalCheckout";
 
 const CartPage = () => {
   const dispatch = useDispatch();
