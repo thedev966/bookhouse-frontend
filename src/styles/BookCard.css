@@ -58,6 +58,6 @@
 
 @media only screen and (max-width: 390px) {
   .book-card > img {
-    height: 210px !important;
+    height: 220px !important;
   }
 }
