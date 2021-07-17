@@ -43,16 +43,16 @@ const AuthContent = ({ title, operation }) => {
       );
     dispatch(loginUser(authData?.user));
     history.push("/");
-    data &&
-      authData.success &&
+    if (data && authData.success) {
       alert.show(
         <div style={{ ...alertStyle, backgroundColor: "#5cb85c" }}>
           {authData.message}
         </div>
       );
-    setTimeout(() => {
-      dispatch(closeModal());
-    }, 3500);
+      setTimeout(() => {
+        dispatch(closeModal());
+      }, 3500);
+    }
   }, [loading, data]);
 
   const handleRegisterAndLogin = async (e) => {

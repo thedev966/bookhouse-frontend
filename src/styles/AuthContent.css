@@ -58,3 +58,15 @@
   margin-top: 8px;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 530px) {
+  .auth-content > .MuiSvgIcon-root {
+    top: 4vh;
+    right: 5vw;
+    font-size: 1.8rem;
+  }
+
+  .auth-content__forgotPwd {
+    font-size: 0.82rem;
+  }
+}
