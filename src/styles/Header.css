@@ -257,6 +257,7 @@
 @media only screen and (max-width: 530px) {
   .authModal__content {
     min-width: unset;
-    max-width: 95vw;
+    width: 88%;
+    padding: 20px;
   }
 }
