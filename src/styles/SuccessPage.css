@@ -1,0 +1,48 @@
+.success {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(236, 235, 235, 0.45);
+}
+
+.success__messageContainer {
+  width: 100%;
+  padding-top: 25vh;
+  border-radius: 6px;
+}
+
+.success__message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px 40px;
+  box-shadow: 0px 1px 3px 0 rgb(0 0 0 / 20%);
+  font-size: 0.95rem;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.success__orderID {
+  color: #198754;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.success_goToOrdersBtn {
+  display: block;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background-color: #198754;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.success_goToOrdersBtn:hover {
+  opacity: 0.8;
+}

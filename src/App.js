@@ -1,56 +1,82 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useEffect } from "react";
+import HomePage from "./pages/HomePage";
+import CategoryPage from "./pages/CategoryPage";
+import BookDetails from "./pages/BookDetails";
+import CartPage from "./pages/CartPage";
+import SuccessPage from "./pages/SuccessPage";
+import OrdersPage from "./pages/OrdersPage";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser, selectUser } from "./features/authSlice";
+import { useLazyQuery } from "@apollo/client";
+import queries from "./graphql/Queries";
+import {
+  EMPTY_BASKET,
+  LOAD_BASKET,
+  selectBasket,
+} from "./features/basketSlice";
 
 function App() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const [refreshToken, { loading, data }] = useLazyQuery(queries.REFRESH_TOKEN);
+
+  useEffect(() => {
+    if (user) {
+      // logged in
+    } else {
+      // request new access token if possible
+      refreshToken();
+      if (data?.refreshToken.success)
+        dispatch(loginUser(data?.refreshToken.user));
+      // logged out
+    }
+  }, [user, data]);
+
+  useEffect(() => {
+    if (user) {
+      // check if there is basket in localStorage
+      const basket = JSON.parse(localStorage.getItem("basket"));
+      // create a new basket in localStorage
+      if (!basket) {
+        localStorage.setItem("basket", "[]");
+      }
+      dispatch(LOAD_BASKET(basket));
+    } else {
+      dispatch(EMPTY_BASKET());
+    }
+  }, [user]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <Router>
+        <Switch>
+          <Route path="/success">
+            <SuccessPage />
+          </Route>
+          <Route exact path="/orders">
+            <OrdersPage />
+          </Route>
+          <Route exact path="/cart">
+            {user ? <CartPage /> : <Redirect to="/" />}
+          </Route>
+          <Route exact path="/categories/:cat">
+            <CategoryPage />
+          </Route>
+          <Route exact path="/book/:id">
+            <BookDetails />
+          </Route>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
