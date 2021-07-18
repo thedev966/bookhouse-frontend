@@ -8,16 +8,6 @@ import { useDispatch } from "react-redux";
 import { closeModal, loginUser } from "../features/authSlice";
 import { useHistory } from "react-router-dom";
 
-const alertStyle = {
-  minWidth: "32vw",
-  padding: "13px 15px",
-  fontSize: "0.85rem",
-  fontWeight: 600,
-  color: "white",
-  borderRadius: "3px",
-  textAlign: "center",
-};
-
 const AuthContent = ({ title, operation }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -37,7 +27,10 @@ const AuthContent = ({ title, operation }) => {
     data &&
       !authData.success &&
       alert.show(
-        <div style={{ ...alertStyle, backgroundColor: "#d9534f" }}>
+        <div
+          className="auth-content__alertBox"
+          style={{ backgroundColor: "#d9534f" }}
+        >
           {(authData.errors && authData.errors[0].message) || authData.message}
         </div>
       );
@@ -45,13 +38,16 @@ const AuthContent = ({ title, operation }) => {
     history.push("/");
     if (data && authData.success) {
       alert.show(
-        <div style={{ ...alertStyle, backgroundColor: "#5cb85c" }}>
+        <div
+          className="auth-content__alertBox"
+          style={{ backgroundColor: "#5cb85c" }}
+        >
           {authData.message}
         </div>
       );
       setTimeout(() => {
         dispatch(closeModal());
-      }, 3500);
+      }, 2000);
     }
   }, [loading, data]);
 

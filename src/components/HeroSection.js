@@ -4,7 +4,6 @@ import BookCard from "./BookCard";
 import { useQuery } from "@apollo/client";
 import queries from "../graphql/Queries";
 import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
 
 const HeroSection = () => {
   const { loading, data } = useQuery(queries.HERO_BOOKS);
@@ -36,7 +35,7 @@ const HeroSection = () => {
       }}
     >
       <div className="hero-section__content">
-        <Zoom left>
+        <Fade left>
           <div className="hero-section__book-info">
             <div className="hero-section__title">{activeBook?.title}</div>
             <div className="hero-section__author">by {activeBook?.author}</div>
@@ -44,7 +43,7 @@ const HeroSection = () => {
               {truncateOverview(activeBook?.description, 450)}
             </div>
           </div>
-        </Zoom>
+        </Fade>
         {data && (
           <Fade right>
             <div className="hero-sectionm__books-list">

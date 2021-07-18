@@ -22,7 +22,7 @@ const client = new ApolloClient({
 
 const alertOptions = {
   position: positions.TOP_CENTER,
-  timeout: 3000,
+  timeout: 2400,
   offset: "40px",
   transition: transitions.FADE,
 };

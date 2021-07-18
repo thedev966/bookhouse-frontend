@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import "../styles/BookDetails.css";
 import StarRatings from "react-star-ratings";
@@ -20,7 +20,11 @@ const BookDetails = () => {
   });
 
   const truncateDescription = (text, limit) => {
-    return text.length > limit ? text.substring(0, limit) + "..." : text;
+    return text.length > limit
+      ? window.screen.width > 440
+        ? text.substring(0, limit) + "..."
+        : text
+      : text;
   };
 
   const handleAddToCart = () => {

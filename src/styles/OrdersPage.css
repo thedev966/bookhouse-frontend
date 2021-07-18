@@ -60,3 +60,103 @@
   object-fit: contain;
   margin-left: 10px;
 }
+
+@media only screen and (max-width: 920px) {
+  .orders__orderID > label,
+  .orders__orderMethod > span,
+  .orders__orderStatus > label,
+  .orders__orderTotal > label,
+  .orders__orderDate > label {
+    font-size: 0.85rem;
+  }
+
+  .orders__orderID > span,
+  .orders__orderStatus > span,
+  .orders__orderTotal > span,
+  .orders__orderDate > span {
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
+
+  .orders__orderMethod img {
+    width: 45px;
+    margin-left: 3px;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .orders__list {
+    padding-top: 22vh;
+  }
+
+  .orders__listItem {
+    flex-direction: column;
+  }
+
+  .orders__orderID > label,
+  .orders__orderMethod > span,
+  .orders__orderStatus > label,
+  .orders__orderTotal > label,
+  .orders__orderDate > label {
+    font-size: 0.96rem;
+  }
+
+  .orders__orderID > span,
+  .orders__orderStatus > span,
+  .orders__orderTotal > span,
+  .orders__orderDate > span {
+    font-size: 0.86rem;
+    margin-left: 5px;
+  }
+
+  .orders__orderID,
+  .orders__orderMethod,
+  .orders__orderStatus,
+  .orders__orderTotal,
+  .orders__orderDate {
+    margin-bottom: 10px;
+  }
+
+  .orders__orderMethod img {
+    width: 55px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .orders__list {
+    padding-top: 17vh;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .orders__listItem {
+    padding: 30px;
+  }
+
+  .orders__orderID > label,
+  .orders__orderMethod > span,
+  .orders__orderStatus > label,
+  .orders__orderTotal > label,
+  .orders__orderDate > label {
+    font-size: 0.85rem;
+  }
+
+  .orders__orderID > span,
+  .orders__orderStatus > span,
+  .orders__orderTotal > span,
+  .orders__orderDate > span {
+    font-size: 0.8rem;
+  }
+
+  .orders__orderMethod img {
+    width: 45px;
+  }
+
+  .orders__orderID,
+  .orders__orderMethod,
+  .orders__orderStatus,
+  .orders__orderTotal,
+  .orders__orderDate {
+    margin-bottom: 6px;
+  }
+}
