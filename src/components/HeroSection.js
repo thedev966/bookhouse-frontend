@@ -14,6 +14,7 @@ const HeroSection = () => {
     if (data) {
       setHeroBooks(data.heroBooks.heroBooks);
       setActiveBook(data.heroBooks.heroBooks[0]);
+      console.log(data);
     }
   }, [loading, data]);
 

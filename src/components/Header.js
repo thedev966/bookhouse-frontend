@@ -83,6 +83,12 @@ const Header = () => {
     window.location.reload();
   };
 
+  const handleMenuClick = () => {
+    document
+      .querySelector(".header__searchAndBasket")
+      .classList.toggle("header__searchAndBasket--active");
+  };
+
   return (
     <div className="wrapper">
       <div className="header__container" ref={header}>
@@ -96,15 +102,23 @@ const Header = () => {
           </Link>
         </div>
         <div className="header__right">
-          <div className="header__searchBox">
-            <SearchIcon />
-            <input type="text" placeholder="Search here.." />
+          <div className="header__searchAndBasket">
+            <div className="header__searchBox">
+              <SearchIcon />
+              <input type="text" placeholder="Search here.." />
+            </div>
+            <div
+              className="header__basket"
+              onClick={() => history.push("/cart")}
+            >
+              My Basket <ShoppingCartIcon />
+              <span className="header__basketCount">{basketCount}</span>
+            </div>
           </div>
-          <div className="header__basket" onClick={() => history.push("/cart")}>
-            My Basket <ShoppingCartIcon />
-            <span className="header__basketCount">{basketCount}</span>
-          </div>
-          <MenuRoundedIcon className="header__menuIcon" />
+          <MenuRoundedIcon
+            className="header__menuIcon"
+            onClick={handleMenuClick}
+          />
           <div className="header__user" onClick={handleAvatarClick}>
             <img
               className="header__userAvatar"
