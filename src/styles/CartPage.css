@@ -279,17 +279,16 @@
   }
 
   .cart__continueShopping {
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -16vh;
+    bottom: -80px;
     width: 88vw;
-    margin-bottom: 20px;
   }
 
   .cart__total {
     width: 88vw;
-    margin-top: -2vh;
+    margin-top: -40px;
   }
 }
 
@@ -298,7 +297,7 @@
     width: unset;
   }
   .cart__continueShopping {
-    bottom: -25vh;
+    bottom: -90px;
   }
 
   .cart__continueShopping,
@@ -309,6 +308,6 @@
 
 @media only screen and (max-width: 398px) {
   .cart__continueShopping {
-    bottom: -28vh;
+    bottom: -90px;
   }
 }
