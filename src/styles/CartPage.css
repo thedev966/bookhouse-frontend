@@ -220,7 +220,7 @@
 
 @media only screen and (max-width: 600px) {
   .cart__items {
-    padding-top: 17vh;
+    padding-top: 16vh;
   }
 
   .cart__itemInfo {
@@ -243,7 +243,7 @@
   }
 
   .cart__itemCover {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
   }
 
   .cart__itemTitle {
@@ -298,12 +298,17 @@
     width: unset;
   }
   .cart__continueShopping {
-    bottom: -26vh;
+    bottom: -25vh;
+  }
+
+  .cart__continueShopping,
+  .cart__checkoutBtn {
+    padding: 13px 20px;
   }
 }
 
 @media only screen and (max-width: 398px) {
   .cart__continueShopping {
-    bottom: -29vh;
+    bottom: -28vh;
   }
 }
