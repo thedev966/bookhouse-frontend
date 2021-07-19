@@ -180,3 +180,130 @@
   border-radius: 2px;
   margin-bottom: 6px;
 }
+
+/* Responsive queries */
+
+@media only screen and (max-width: 930px) {
+  .cart__itemDescription {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 805px) {
+  .cart__item {
+    position: relative;
+    flex-direction: column;
+  }
+
+  .cart__itemControls {
+    position: unset;
+    margin-top: -5px;
+    margin-left: 155px;
+  }
+
+  .cart__deleteIcon {
+    top: 35px;
+    right: 35px;
+  }
+
+  .cart__itemPrice {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .cart__itemControls {
+    margin-left: 145px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cart__items {
+    padding-top: 17vh;
+  }
+
+  .cart__itemInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart__itemInfoContainer {
+    margin-left: 0;
+  }
+
+  .cart__deleteIcon {
+    display: none !important;
+  }
+
+  .cart__itemTitle,
+  .cart__itemAuthor,
+  .cart__itemDescription {
+    text-align: center;
+  }
+
+  .cart__itemCover {
+    margin-bottom: 10px;
+  }
+
+  .cart__itemTitle {
+    font-size: 1.2rem;
+  }
+
+  .cart__itemDescription {
+    max-width: unset;
+    line-height: 22px;
+    margin-top: 10px;
+  }
+
+  .cart__itemControlsContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cart__itemControls {
+    position: relative;
+    margin-left: 0;
+    margin-top: 70px;
+  }
+
+  .cart__itemQuantity {
+    padding: 10px 40px;
+  }
+
+  .cart__action {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 80px;
+  }
+
+  .cart__continueShopping {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -16vh;
+    width: 88vw;
+    margin-bottom: 20px;
+  }
+
+  .cart__total {
+    width: 88vw;
+    margin-top: -2vh;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .cart__itemCover {
+    width: unset;
+  }
+  .cart__continueShopping {
+    bottom: -26vh;
+  }
+}
+
+@media only screen and (max-width: 398px) {
+  .cart__continueShopping {
+    bottom: -29vh;
+  }
+}
