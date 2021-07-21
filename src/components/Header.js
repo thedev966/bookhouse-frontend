@@ -77,9 +77,8 @@ const Header = () => {
   };
 
   const handleLogOut = async () => {
-    dispatch(logoutUser());
-    logOutUser();
     emptyBasket();
+    logOutUser();
     window.location.reload();
   };
 
