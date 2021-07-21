@@ -34,6 +34,7 @@ const Header = () => {
   const history = useHistory();
   const [logOutUser, { loading, data }] = useLazyQuery(queries.LOGOUT_USER);
   const basketCount = useSelector(selectBasketCount);
+  const [isLoggedOut, setIsLoggedOut] = useState(false);
 
   ReactModal.setAppElement("#root");
 
@@ -58,6 +59,14 @@ const Header = () => {
     dispatch(SET_BASKET_COUNT());
   }, []);
 
+  useEffect(() => {
+    if (isLoggedOut) {
+      emptyBasket();
+      dispatch(logoutUser());
+      window.location.reload();
+    }
+  }, [data, isLoggedOut]);
+
   const handleAvatarClick = () => {
     dropDownRef.current.classList.toggle("userDropDown--active");
   };
@@ -77,11 +86,11 @@ const Header = () => {
   };
 
   const handleLogOut = async () => {
-    emptyBasket();
     logOutUser();
-    window.location.reload();
+    setIsLoggedOut(true);
   };
 
+  data && console.log(data.logOutUser);
   const handleMenuClick = () => {
     document
       .querySelector(".header__searchAndBasket")
