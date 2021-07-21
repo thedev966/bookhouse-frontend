@@ -98,6 +98,12 @@ const CartPage = () => {
                     </div>
                   </div>
                 </div>
+                <button
+                  className="cart__removeFromBasketBtn"
+                  onClick={handleDeleteItemFromCart(book.id)}
+                >
+                  Remove
+                </button>
               </div>
             ))}
         </div>

@@ -27,7 +27,9 @@ const BookDetails = () => {
       : text;
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.target.innerText = "ADDED TO CART";
+    e.target.setAttribute("disabled", true);
     dispatch(ADD_TO_BASKET(data.singleBook.bookDetails));
   };
 
