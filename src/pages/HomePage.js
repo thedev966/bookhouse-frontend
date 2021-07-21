@@ -13,7 +13,7 @@ const HomePage = () => {
     <div className="homepage__container">
       <Header />
       <HeroSection />
-      <Categories />
+      {/* <Categories /> */}
       <Slide bottom>
         <BookCategoryRow
           catName="Fiction"

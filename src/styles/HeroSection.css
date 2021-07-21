@@ -5,6 +5,7 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  margin-bottom: 24px;
 }
 
 .hero-section::after {
