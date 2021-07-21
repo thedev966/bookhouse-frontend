@@ -17,7 +17,10 @@ const queries = {
   `,
   LOGOUT_USER: gql`
     query {
-      logOutUser
+      logOutUser {
+        success
+        message
+      }
     }
   `,
   FEATURED_BOOKS: gql`

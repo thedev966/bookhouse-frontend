@@ -32,7 +32,7 @@ const Header = () => {
   const isOpenedAuthModal = useSelector(selectIsOpenedAuthModal);
   const dispatch = useDispatch();
   const history = useHistory();
-  const [logOutUser, { loading }] = useLazyQuery(queries.LOGOUT_USER);
+  const [logOutUser, { loading, data }] = useLazyQuery(queries.LOGOUT_USER);
   const basketCount = useSelector(selectBasketCount);
 
   ReactModal.setAppElement("#root");
@@ -76,9 +76,9 @@ const Header = () => {
     document.body.overflow = "unset";
   };
 
-  const handleLogOut = () => {
-    logOutUser();
+  const handleLogOut = async () => {
     dispatch(logoutUser());
+    logOutUser();
     emptyBasket();
     window.location.reload();
   };
