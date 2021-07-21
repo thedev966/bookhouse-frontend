@@ -46,3 +46,40 @@
 .success_goToOrdersBtn:hover {
   opacity: 0.8;
 }
+
+/* Responsive queries */
+
+@media only screen and (max-width: 740px) {
+  .success__message {
+    max-width: unset;
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .success__message {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .success__message {
+    width: 84%;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .success__message {
+    width: 88%;
+    font-size: 0.85rem;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .success__message {
+    font-size: 0.85rem;
+    padding: 30px;
+  }
+}

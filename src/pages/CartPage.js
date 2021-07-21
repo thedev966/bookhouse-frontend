@@ -55,7 +55,13 @@ const CartPage = () => {
       <Header />
       <div className="cart__items">
         <div className="wrapper">
-          {cart && cart.length === 0 && <div>You have no items in cart!</div>}
+          {cart && cart.length === 0 && (
+            <img
+              className="cart__emptyCart"
+              src="https://www.no-fea.com/front/images/empty-cart.png"
+              alt="empty cart"
+            />
+          )}
           {cart &&
             cart.length > 0 &&
             cart.map((book) => (
@@ -100,7 +106,7 @@ const CartPage = () => {
                 </div>
                 <button
                   className="cart__removeFromBasketBtn"
-                  onClick={handleDeleteItemFromCart(book.id)}
+                  onClick={() => handleDeleteItemFromCart(book.id)}
                 >
                   Remove
                 </button>
