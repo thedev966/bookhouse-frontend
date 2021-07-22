@@ -34,6 +34,7 @@ const Header = () => {
   const history = useHistory();
   const [logOutUser, { loading, data }] = useLazyQuery(queries.LOGOUT_USER);
   const basketCount = useSelector(selectBasketCount);
+  const searchBox = useRef();
 
   ReactModal.setAppElement("#root");
 
@@ -91,6 +92,11 @@ const Header = () => {
       .classList.toggle("header__searchAndBasket--active");
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    history.push(`/search?q=${searchBox.current.value}`);
+  };
+
   return (
     <div className="wrapper">
       <div className="header__container" ref={header}>
@@ -105,10 +111,10 @@ const Header = () => {
         </div>
         <div className="header__right">
           <div className="header__searchAndBasket">
-            <div className="header__searchBox">
+            <form className="header__searchBox" onSubmit={handleSearch}>
               <SearchIcon />
-              <input type="text" placeholder="Search here.." />
-            </div>
+              <input type="text" placeholder="Search here.." ref={searchBox} />
+            </form>
             <div
               className="header__basket"
               onClick={() => history.push("/cart")}

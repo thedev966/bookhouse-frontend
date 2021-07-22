@@ -97,6 +97,19 @@ const queries = {
       }
     }
   `,
+
+  SEARCH_BOOKS: gql`
+    query searchBooks($query: String!) {
+      searchBooks(query: $query) {
+        success
+        books {
+          id
+          title
+          cover
+        }
+      }
+    }
+  `,
 };
 
 export default queries;

@@ -16,6 +16,7 @@ import { loginUser, selectUser } from "./features/authSlice";
 import { useLazyQuery } from "@apollo/client";
 import queries from "./graphql/Queries";
 import { EMPTY_BASKET, LOAD_BASKET } from "./features/basketSlice";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   const user = useSelector(selectUser);
@@ -53,6 +54,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/search">
+            <SearchPage />
+          </Route>
           <Route path="/success">
             <SuccessPage />
           </Route>
