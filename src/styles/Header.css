@@ -220,7 +220,7 @@
     flex-direction: column;
     position: relative;
     left: 0;
-    top: 19vh;
+    top: 21vh;
     min-width: 50vw;
     overflow: hidden;
     background-color: whitesmoke;
@@ -252,6 +252,11 @@
     margin-right: 10px !important;
     visibility: visible;
     opacity: 1;
+  }
+
+  .header__userDropDown {
+    top: 16vh;
+    right: 3vw;
   }
 }
 
@@ -296,8 +301,8 @@
 @media only screen and (max-width: 480px) {
   .header__searchAndBasket {
     position: absolute;
-    left: -65vw;
-    top: 11vh;
+    left: -69vw;
+    top: 12vh;
     width: 84vw;
   }
 
@@ -322,20 +327,32 @@
 
 @media only screen and (max-width: 430px) {
   .header__searchAndBasket {
-    left: -66vw;
+    left: -69vw;
     width: 90vw;
+  }
+
+  .header__userDropDown {
+    right: -2vw;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .header__searchAndBasket {
-    left: -62vw;
-    width: 86vw;
+    left: -70vw;
+    width: 95vw;
+  }
+
+  .header__userDropDown {
+    right: -2vw;
   }
 }
 
 @media only screen and (max-width: 370px) {
   .header__searchAndBasket {
-    left: -61vw;
+    left: -67vw;
+  }
+
+  .header__userDropDown {
+    right: -3vw;
   }
 }

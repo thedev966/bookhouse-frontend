@@ -94,6 +94,9 @@ const Header = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    document
+      .querySelector(".header__searchAndBasket")
+      .classList.remove("header__searchAndBasket--active");
     history.push(`/search?q=${searchBox.current.value}`);
   };
 
