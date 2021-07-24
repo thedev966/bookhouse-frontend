@@ -25,7 +25,7 @@
     "react-star-ratings": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "(set PORT=5001 || export PORT=5001) && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
