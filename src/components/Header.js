@@ -82,7 +82,7 @@ const Header = () => {
     logOutUser();
     setTimeout(() => {
       window.location.reload();
-    }, 1200);
+    }, 1000);
   };
 
   data && console.log(data);
