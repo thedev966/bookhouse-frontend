@@ -81,6 +81,7 @@ const Header = () => {
     dispatch(logoutUser());
     emptyBasket();
     logOutUser();
+    history.push("/");
   };
 
   data && console.log(data);
