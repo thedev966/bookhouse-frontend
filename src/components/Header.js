@@ -79,6 +79,9 @@ const Header = () => {
 
   const handleLogOut = async () => {
     logOutUser();
+    setTimeout(() => {
+      window.location.reload();
+    }, 1500);
   };
 
   data && console.log(data);
