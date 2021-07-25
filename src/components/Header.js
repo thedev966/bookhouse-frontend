@@ -78,10 +78,11 @@ const Header = () => {
   };
 
   const handleLogOut = async () => {
+    emptyBasket();
     logOutUser();
     setTimeout(() => {
       window.location.reload();
-    }, 1500);
+    }, 1200);
   };
 
   data && console.log(data);
