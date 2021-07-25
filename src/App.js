@@ -32,9 +32,6 @@ function App() {
       refreshToken();
       if (data?.refreshToken.success) {
         dispatch(loginUser(data?.refreshToken.user));
-      } else {
-        // logged out
-        dispatch(logoutUser());
       }
     }
   }, [user, data]);
