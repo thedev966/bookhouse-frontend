@@ -35,34 +35,40 @@ const HeroSection = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="hero-section__content">
-        <Fade left>
-          <div className="hero-section__book-info">
-            <div className="hero-section__title">{activeBook?.title}</div>
-            <div className="hero-section__author">by {activeBook?.author}</div>
-            <div className="hero-section__overview">
-              {truncateOverview(activeBook?.description, 450)}
-            </div>
-          </div>
-        </Fade>
-        {data && (
-          <Fade right>
-            <div className="hero-sectionm__books-list">
-              {heroBooks.map((book, key) => (
-                <div
-                  key={key}
-                  onClick={() => handleCardClick(heroBooks.indexOf(book))}
-                >
-                  <BookCard
-                    cover={book.cover}
-                    active={book.id === activeBook?.id ? true : false}
-                  />
-                </div>
-              ))}
+      {loading ? (
+        <>Loading...</>
+      ) : (
+        <div className="hero-section__content">
+          <Fade left>
+            <div className="hero-section__book-info">
+              <div className="hero-section__title">{activeBook?.title}</div>
+              <div className="hero-section__author">
+                by {activeBook?.author}
+              </div>
+              <div className="hero-section__overview">
+                {truncateOverview(activeBook?.description, 450)}
+              </div>
             </div>
           </Fade>
-        )}
-      </div>
+          {data && (
+            <Fade right>
+              <div className="hero-sectionm__books-list">
+                {heroBooks.map((book, key) => (
+                  <div
+                    key={key}
+                    onClick={() => handleCardClick(heroBooks.indexOf(book))}
+                  >
+                    <BookCard
+                      cover={book.cover}
+                      active={book.id === activeBook?.id ? true : false}
+                    />
+                  </div>
+                ))}
+              </div>
+            </Fade>
+          )}
+        </div>
+      )}
     </div>
   );
 };
