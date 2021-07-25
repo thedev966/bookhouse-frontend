@@ -81,7 +81,6 @@ const Header = () => {
     dispatch(logoutUser());
     emptyBasket();
     logOutUser();
-    window.location.reload();
   };
 
   data && console.log(data);
