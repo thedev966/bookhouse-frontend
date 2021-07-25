@@ -45,8 +45,6 @@ function App() {
         localStorage.setItem("basket", "[]");
       }
       dispatch(LOAD_BASKET(basket));
-    } else {
-      dispatch(EMPTY_BASKET());
     }
   }, [user]);
 
