@@ -77,7 +77,8 @@ const Header = () => {
     document.body.overflow = "unset";
   };
 
-  const handleLogOut = async () => {
+  const handleLogOut = () => {
+    dispatch(logoutUser());
     logOutUser();
   };
 
