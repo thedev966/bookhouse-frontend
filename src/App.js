@@ -12,7 +12,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser, selectUser } from "./features/authSlice";
+import { loginUser, logoutUser, selectUser } from "./features/authSlice";
 import { useLazyQuery } from "@apollo/client";
 import queries from "./graphql/Queries";
 import { EMPTY_BASKET, LOAD_BASKET } from "./features/basketSlice";
@@ -30,9 +30,12 @@ function App() {
     } else {
       // request new access token if possible
       refreshToken();
-      if (data?.refreshToken.success)
+      if (data?.refreshToken.success) {
         dispatch(loginUser(data?.refreshToken.user));
-      // logged out
+      } else {
+        // logged out
+        dispatch(logoutUser());
+      }
     }
   }, [user, data]);
 
