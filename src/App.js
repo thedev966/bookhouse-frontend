@@ -35,7 +35,6 @@ function App() {
       } else {
         // logged out
         dispatch(logoutUser());
-        window.location.reload();
       }
     }
   }, [user, data]);
