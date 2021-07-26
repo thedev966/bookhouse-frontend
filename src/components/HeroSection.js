@@ -36,7 +36,7 @@ const HeroSection = () => {
       }}
     >
       {loading ? (
-        <>Loading...</>
+        <>Loading..</>
       ) : (
         <div className="hero-section__content">
           <Fade left>
